@@ -43,6 +43,20 @@
 
 # Integrating with streamlit
 
+import os
+import subprocess
+
+# Install missing dependencies
+try:
+    import tensorflow
+except ModuleNotFoundError:
+    subprocess.run(["pip", "install", "tensorflow", "--no-cache-dir"])
+
+try:
+    import cv2
+except ModuleNotFoundError:
+    subprocess.run(["pip", "install", "opencv-python", "--no-cache-dir"])
+    
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
