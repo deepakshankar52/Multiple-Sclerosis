@@ -60,7 +60,9 @@ uploaded_file = st.file_uploader("Choose an MRI image...", type=["jpg", "jpeg", 
 
 if uploaded_file is not None:
     # Display the uploaded image
-    st.image(uploaded_file, caption="Uploaded MRI Image", use_column_width=True)
+    # st.image(uploaded_file, caption="Uploaded MRI Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded MRI Image", use_container_width=True)
+
     st.write("Classifying...")
 
     # Save the uploaded file temporarily
@@ -79,6 +81,12 @@ if uploaded_file is not None:
     # st.write(f"Prediction: **{result}**")
 
     col1, col2 = st.columns(2)
-    col1.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    col1.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
     col2.write(f"Prediction: **{result}**")
-    
+
+# Commands to run 
+#  1111  python3 -m venv myenv
+#  1112  source myenv/bin/activate
+#  1113  pip install streamlit tensorflow numpy opencv-python
+#  1115  streamlit run model_backend.py 
+#  1116  deactivate
