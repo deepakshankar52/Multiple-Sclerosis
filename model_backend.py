@@ -57,6 +57,9 @@
 # except ModuleNotFoundError:
 #     subprocess.run(["pip", "install", "opencv-python", "--no-cache-dir"])
 
+import os
+os.system('pip uninstall -y tensorflow tensorflow-cpu && pip install tensorflow-cpu==2.9.1')
+
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
